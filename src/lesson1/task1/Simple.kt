@@ -45,6 +45,9 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
     return x1 * x2 // Результат
 }
 
+//Функция перевода часов в секунды
+fun hoursToSeconds(hours: Int): Int = hours * 360
+
 /**
  * Пример главной функции
  */
