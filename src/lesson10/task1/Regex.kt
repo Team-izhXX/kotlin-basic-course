@@ -100,6 +100,7 @@ class Parser(private val groups: List<String>) {
                     val right = parseItem()
                     left = Expression.Binary(left, op, right)
                 }
+
                 else -> return left
             }
         }

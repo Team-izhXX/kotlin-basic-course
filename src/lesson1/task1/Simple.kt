@@ -54,9 +54,10 @@ fun division(a: Double, b: Double): Double = a / b
  * Пример главной функции
  */
 fun main() {
-    val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
-    println("Root product: $x1x2")
+    val test = trackLength(3, 0, 0, 4)
+    println("$test")
 }
+
 
 /**
  * Тривиальная
@@ -64,7 +65,11 @@ fun main() {
  * Пользователь задает время в часах, минутах и секундах, например, 8:20:35.
  * Рассчитать время в секундах, прошедшее с начала суток (30035 в данном случае).
  */
-fun seconds(hours: Int, minutes: Int, seconds: Int): Int = TODO()
+fun seconds(hours: Int, minutes: Int, seconds: Int): Int {
+    val hoursInSecond: Int = hours * 3600
+    val minutesInSecond: Int = minutes * 60
+    return hoursInSecond + minutesInSecond + seconds
+}
 
 /**
  * Тривиальная
@@ -73,15 +78,26 @@ fun seconds(hours: Int, minutes: Int, seconds: Int): Int = TODO()
  * Определить длину того же отрезка в метрах (в данном случае 18.98).
  * 1 сажень = 3 аршина = 48 вершков, 1 вершок = 4.445 см.
  */
-fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
-
+fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double {
+    val sagenesInVershoks = sagenes * 48
+    val arshinsInVershoks = arshins * 16
+    val amount = vershoks + sagenesInVershoks + arshinsInVershoks
+    val amountInSm = amount * 4.445
+    return amountInSm / 100
+}
 /**
  * Тривиальная
  *
  * Пользователь задает угол в градусах, минутах и секундах (например, 36 градусов 14 минут 35 секунд).
  * Вывести значение того же угла в радианах (например, 0.63256).
  */
-fun angleInRadian(deg: Int, min: Int, sec: Int): Double = TODO()
+fun angleInRadian(deg: Int, min: Int, sec: Int): Double {
+    val angleInRadian = deg * PI / 180
+    val minInRadian = min * PI / (60 * 180)
+    val secInRadian = sec * PI / (180 * 3600)
+    return angleInRadian + minInRadian + secInRadian
+}
+
 
 /**
  * Тривиальная
@@ -89,7 +105,13 @@ fun angleInRadian(deg: Int, min: Int, sec: Int): Double = TODO()
  * Найти длину отрезка, соединяющего точки на плоскости с координатами (x1, y1) и (x2, y2).
  * Например, расстояние между (3, 0) и (0, 4) равно 5
  */
-fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = TODO()
+fun trackLength(x1: Int, y1: Int, x2: Int, y2: Int): Double {
+    val differenceX: Double = x2.toDouble() - x1.toDouble()
+    val differenceY: Double = y2.toDouble() - y1.toDouble()
+    return sqrt(differenceX.pow(2) + differenceY.pow(2))
+}
+
+
 
 /**
  * Простая
