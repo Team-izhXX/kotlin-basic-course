@@ -54,8 +54,8 @@ fun division(a: Double, b: Double): Double = a / b
  * Пример главной функции
  */
 fun main() {
-    val test = trackLength(3, 0, 0, 4)
-    println("$test")
+//    val test = trackLength(3, 0, 0, 4)
+//    println("$test")
 }
 
 
@@ -105,9 +105,9 @@ fun angleInRadian(deg: Int, min: Int, sec: Int): Double {
  * Найти длину отрезка, соединяющего точки на плоскости с координатами (x1, y1) и (x2, y2).
  * Например, расстояние между (3, 0) и (0, 4) равно 5
  */
-fun trackLength(x1: Int, y1: Int, x2: Int, y2: Int): Double {
-    val differenceX: Double = x2.toDouble() - x1.toDouble()
-    val differenceY: Double = y2.toDouble() - y1.toDouble()
+fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double {
+    val differenceX: Double = x2 - x1
+    val differenceY: Double = y2 - y1
     return sqrt(differenceX.pow(2) + differenceY.pow(2))
 }
 
